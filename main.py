@@ -17,9 +17,9 @@ def predict():
     spo2 = request.args.get("spo2")
     pr = request.args.get("pr")
     nCov2 = request.args.get("nCoV2")
-    data = np.array([age, gender, spo2, pr, nCov2]).astype(float).reshape(1 , -1)
-    res = model.predict(data)
-    return jsonify({"oxy_flow":str(res)})
+    data = [[float(age), float(gender), float(spo2), float(pr), float(nCov2)]]
+    res = model.predict(data)[0]
+    return jsonify({"oxy_flow":str(abs(res))})
 
 if __name__ == '__main__':
     app.run(port=5000)
