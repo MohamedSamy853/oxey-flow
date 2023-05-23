@@ -2,5 +2,4 @@ flask>=2.0.0
 gunicorn>=20.1.0
 pip
 numpy
-sklearn
 scikit-learn
