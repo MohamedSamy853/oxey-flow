@@ -22,4 +22,4 @@ def predict():
     return jsonify({"oxy_flow":str(abs(res))})
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=os.getenv("PORT", 8000))
